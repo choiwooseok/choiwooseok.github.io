@@ -1,7 +1,7 @@
 ---
 title: "balanced brackets"
 date: 2019-12-11 08:26:28 -0400
-categories: algorithm
+categories: algorithm-prob
 ---
 
 ```cpp

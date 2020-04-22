@@ -1,7 +1,7 @@
 ---
 title: "프로그래머스 가장 먼 노드"
 date: 2020-04-14 00:00:00 -0400
-categories: algorithm
+categories: algorithm-prob
 
 ---
 
