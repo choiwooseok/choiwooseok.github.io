@@ -5,9 +5,9 @@ categories: study
 ---
 
 * 보는중인 도서
+    * Introduction to Algorithms
 
 * 볼 것
-    * Introduction to Algorithms
 	* 클린 코드
 
 * 본 도서
