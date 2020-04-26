@@ -1,6 +1,6 @@
 ---
 title: "[Codility] FrogRiverOne"
-date: 2020-04-24 00:00:00 -0400
+date: 2020-04-26 00:00:00 -0400
 categories: algorithm-prob
 ---
 
