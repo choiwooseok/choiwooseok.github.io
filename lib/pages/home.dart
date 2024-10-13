@@ -32,8 +32,15 @@ class _MyHomePageState extends State<MyHomePage> {
   AppBar appbar() {
     return AppBar(
       backgroundColor: Colors.black,
-      title: Text('Lottery Number Generator',
-          style: GoogleFonts.acme(color: Colors.white)),
+      title: Row(
+        children: [
+          Text('Lottery Number Generator',
+              style: GoogleFonts.acme(color: Colors.white)),
+          const SizedBox(width: 12),
+          Image.network(
+              'https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fchoiwooseok.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false'),
+        ],
+      ),
       actions: [
         IconButton(
           tooltip: 'Shuffle History',
