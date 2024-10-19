@@ -4,68 +4,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+import '../components/page_appbar.dart';
+import '../components/page_drawer.dart';
+
+class LottoNumberGeneratorPage extends StatefulWidget {
+  const LottoNumberGeneratorPage({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<LottoNumberGeneratorPage> createState() =>
+      _LottoNumberGeneratorPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _LottoNumberGeneratorPageState extends State<LottoNumberGeneratorPage> {
   List<int> numbers = List<int>.generate(45, (index) => index + 1);
   List<List<int>> history = [];
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: appbar(), body: body());
-  }
-
-  AppBar appbar() {
-    return AppBar(
-      backgroundColor: Colors.black,
-      title: Row(
-        children: [
-          const SizedBox(width: 8),
-          Text('Lottery', style: GoogleFonts.acme(color: Colors.white)),
-          const SizedBox(width: 8),
-          Image.network(
-              'https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fchoiwooseok.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false'),
-        ],
-      ),
-      titleSpacing: 0,
-      actions: [
-        IconButton(
-          tooltip: 'Shuffle History',
-          icon: const Icon(Icons.shuffle, color: Colors.white),
-          onPressed: () {
-            history.shuffle(Random.secure());
-            setState(() {});
-          },
-        ),
-        const SizedBox(width: 8),
-        IconButton(
-          tooltip: 'Clear History',
-          icon:
-              const Icon(Icons.cleaning_services_outlined, color: Colors.white),
-          onPressed: () {
-            _clearHistory();
-            setState(() {});
-          },
-        ),
-        const SizedBox(width: 8),
-        IconButton(
-          tooltip: 'Generate Numbers',
-          icon: const Icon(Icons.add_box_outlined, color: Colors.white),
-          onPressed: () {
-            numbers.shuffle(Random.secure());
-            var selectedNumbers = numbers.sublist(0, 6);
-            selectedNumbers.sort();
-            history.add(selectedNumbers);
-            setState(() {});
-          },
-        ),
-        const SizedBox(width: 8),
-      ],
+    return Scaffold(
+      appBar: const PageAppBar(),
+      body: body(),
+      endDrawer: const PageDrawer(),
     );
   }
 
@@ -76,6 +35,55 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            SizedBox(
+              height: 50,
+              child: Center(
+                child: Text(
+                  'Lottery Number Generator',
+                  style: GoogleFonts.acme(
+                    color: Colors.white,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                  tooltip: 'Shuffle History',
+                  icon: const Icon(Icons.shuffle, color: Colors.white),
+                  onPressed: () {
+                    history.shuffle(Random.secure());
+                    setState(() {});
+                  },
+                ),
+                const SizedBox(width: 8),
+                IconButton(
+                  tooltip: 'Clear History',
+                  icon: const Icon(Icons.cleaning_services_outlined,
+                      color: Colors.white),
+                  onPressed: () {
+                    _clearHistory();
+                    setState(() {});
+                  },
+                ),
+                const SizedBox(width: 8),
+                IconButton(
+                  tooltip: 'Generate Numbers',
+                  icon: const Icon(Icons.add_box_outlined, color: Colors.white),
+                  onPressed: () {
+                    numbers.shuffle(Random.secure());
+                    var selectedNumbers = numbers.sublist(0, 6);
+                    selectedNumbers.sort();
+                    history.add(selectedNumbers);
+                    setState(() {});
+                  },
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
             Expanded(
               child: ListView.builder(
                 itemCount: history.length,

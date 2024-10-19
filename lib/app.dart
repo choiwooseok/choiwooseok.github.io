@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'pages/home.dart';
+import 'presentation/pages/json_formatter.dart';
+import 'presentation/pages/lotto_number_generator.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -10,12 +11,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Lottery Number Generator',
+      title: 'Wooseok Choi',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(),
+      home: const LottoNumberGeneratorPage(),
+      routes: {
+        '/lotto_number_generator': (context) =>
+            const LottoNumberGeneratorPage(),
+        '/json_formatter': (context) => const JsonFormatter(),
+      },
     );
   }
 }
