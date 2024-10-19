@@ -11,10 +11,7 @@ class PageDrawer extends StatelessWidget {
         children: [
           const DrawerHeader(
             child: Center(
-              child: Text(
-                'Pages',
-                style: TextStyle(color: Colors.white),
-              ),
+              child: Text('Pages', style: TextStyle(color: Colors.white)),
             ),
           ),
           ListTile(
@@ -24,7 +21,9 @@ class PageDrawer extends StatelessWidget {
             ),
             onTap: () {
               Navigator.pushReplacementNamed(
-                  context, '/lotto_number_generator');
+                context,
+                '/lotto_number_generator',
+              );
             },
           ),
           ListTile(
@@ -33,7 +32,10 @@ class PageDrawer extends StatelessWidget {
               style: TextStyle(color: Colors.white),
             ),
             onTap: () {
-              Navigator.pushReplacementNamed(context, '/json_formatter');
+              Navigator.pushReplacementNamed(
+                context,
+                '/json_formatter',
+              );
             },
           ),
         ],

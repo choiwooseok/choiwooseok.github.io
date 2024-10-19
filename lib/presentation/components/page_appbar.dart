@@ -13,9 +13,7 @@ class PageAppBar extends StatelessWidget implements PreferredSizeWidget {
         const SizedBox(width: 10),
         IconButton(
           tooltip: 'Menu',
-          onPressed: () {
-            Scaffold.of(context).openEndDrawer();
-          },
+          onPressed: () => Scaffold.of(context).openEndDrawer(),
           icon: const Icon(Icons.menu, color: Colors.white),
         ),
         const SizedBox(width: 10),

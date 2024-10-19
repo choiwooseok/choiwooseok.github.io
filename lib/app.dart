@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'presentation/pages/json_formatter.dart';
 import 'presentation/pages/lotto_number_generator.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends StatelessWidget {
+  const App({super.key});
 
   // This widget is the root of your application.
   @override
@@ -18,9 +18,12 @@ class MyApp extends StatelessWidget {
       ),
       home: const LottoNumberGeneratorPage(),
       routes: {
-        '/lotto_number_generator': (context) =>
-            const LottoNumberGeneratorPage(),
-        '/json_formatter': (context) => const JsonFormatter(),
+        '/lotto_number_generator': (context) {
+          return const LottoNumberGeneratorPage();
+        },
+        '/json_formatter': (context) {
+          return const JsonFormatter();
+        },
       },
     );
   }

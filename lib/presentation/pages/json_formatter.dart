@@ -66,9 +66,7 @@ class _JsonFormatterState extends State<JsonFormatter> {
         child: TextField(
           maxLines: null,
           expands: true,
-          decoration: const InputDecoration(
-            hintText: 'input text',
-          ),
+          decoration: const InputDecoration(hintText: 'input text'),
           style: const TextStyle(color: Colors.white),
           onChanged: (value) {
             setState(() => _json = value);
@@ -129,13 +127,13 @@ class _JsonFormatterState extends State<JsonFormatter> {
       width: MediaQuery.of(context).size.width * 0.42,
       height: MediaQuery.of(context).size.height * 0.5,
       child: Container(
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.grey),
-        ),
+        decoration: BoxDecoration(border: Border.all(color: Colors.grey)),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
-          child: SelectableText(_formattedJson,
-              style: const TextStyle(color: Colors.white)),
+          child: SelectableText(
+            _formattedJson,
+            style: const TextStyle(color: Colors.white),
+          ),
         ),
       ),
     );
