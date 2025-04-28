@@ -99,23 +99,21 @@ social:
 
 # Analytics
 analytics:
-  provider               : "google" # false (default), "google", "google-universal", "custom"
+  provider               : "google-gtag"
   google:
     tracking_id          : "UA-154480928-1"
-    anonymize_ip         : false # true, false (default)
+    measurement_id       : "G-S762M9ZDE3"
+    anonymize_ip         : false # true, false (default)    
 
 
 # Site Author
 author:
   name             : "Wooseok Choi"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "developer"
+  bio              : "Software Engineer"
   location         : "Republic of Korea"
-  email            :
+  email            : cus0104@naver.com
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: mailto:cus0104@naver.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -291,6 +289,7 @@ defaults:
       layout: single
       author_profile: true
       read_time: false
+      show_date: true
       comments: true
       share: false
       related: true

@@ -4,7 +4,7 @@ date: 2019-12-11 08:26:28 -0400
 categories: cpp package-manager
 ---
 
-* [conan home page](https://conan.io/)
+* [conan](https://conan.io/)
 
 * 왜 써야하는가
     * third-party 직접 빌드해서 사용하기 귀찮..
